@@ -19,7 +19,7 @@ def flightLog(tupleList): # defined func to log flight Itineraries
            print(f"Itinerary {index}: {name} - From {departure} to {destination}") # print itinerary with current index
            index += 1 #increment idx for next itinerary
 
-flightLog(flightList)
+# flightLog(flightList)
 
 
 # 2. Python Data Structure Challenges in Real-World Scenarios
@@ -37,6 +37,42 @@ flightLog(flightList)
 # library = [("1984", "George Orwell"), ("Brave New World", "Aldous Huxley")]
 # Add functionality to insert new books into library.
 # Ensure that adding a duplicate book is handled appropriately.
+
+library = [("1984", "George Orwell"), ("Brave New World", "Aldous Huxley")]
+
+# Define a function to manage a library system
+def librarySystem(libraryList):
+    # Loop indefinitely until explicitly broken
+    while True:
+        # user input for author name, 'done' to exit
+        author = input("Enter Author Name: (enter 'done' when finished) ")
+        
+        # Check if user input is 'done'
+        if author == 'done':
+            break  # Exit the loop if 'done' is entered
+        
+        else:
+            # If user doesn't input 'done', ask for book title
+            bookTitle = input("Enter the Book Title: ")
+            
+            # Create a tuple for the new book addition
+            newAddition = (bookTitle, author)
+            
+            # Check if the new book addition is already in the library
+            if newAddition not in library:
+                # If not in library, add the new book to the library list
+                library.append(newAddition)
+            else:
+                # If book already exists, print an error message
+                print("Error: Book is already inside Library")
+                continue  # Skip to the next iteration of the loop
+            
+            # Print the updated library after each addition
+            print(f"Updated Library:\n{library}")
+
+
+librarySystem(library)
+
 # 3. Python Loops and Tuples in Analytical Applications
 # Objective:
 
