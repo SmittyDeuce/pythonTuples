@@ -7,6 +7,21 @@
 
 # "Itinerary 1: Alice - From New York to London
 #  Itinerary 2: Bob - From Tokyo to San Francisco"
+
+flightList = [("Alice", "New York", "London"), ("Bob", "Tokyo", "San Francisco")]
+
+def flightLog(tupleList): # defined func to log flight Itineraries
+    index = 1 # init index to track itinerary num
+
+    while index < len(tupleList): # loop ubtin index reaches length of tupleList
+        for log in tupleList: # iterate through each tuple in the list
+           name, departure, destination = log # unpacked tuple into 3 variables
+           print(f"Itinerary {index}: {name} - From {departure} to {destination}") # print itinerary with current index
+           index += 1 #increment idx for next itinerary
+
+flightLog(flightList)
+
+
 # 2. Python Data Structure Challenges in Real-World Scenarios
 # Objective:
 # This assignment is designed to enhance your understanding and application of Python's core data structures - tuples, lists, and dictionaries - in real-world contexts. By engaging with these tasks, you will practice manipulating these data structures, applying built-in Python methods, and implementing error handling in practical situations.
