@@ -110,10 +110,7 @@ def stockMarket(stockdata):
     except UnboundLocalError:
         print("symbol doesn't exist")
     
-        
-
-
-stockMarket(stock_data)
+# stockMarket(stock_data)
 
 # Task 2: Event Attendance Tracker
 # Apply loops and tuples to track and report on event attendance.
@@ -125,12 +122,25 @@ stockMarket(stock_data)
 # Implement a feature to count the number of attendees for each event.
 # Example Attendee Data:
 
-# attendees = [
-#     ("Alice", "Python Conference"),
-#     ("Bob", "Python Conference"),
-#     ("Charlie", "AI Summit"),
-#     # More attendees...
-# ]
+attendees = [
+    ("Alice", "Python Conference"),
+    ("Bob", "Python Conference"),
+    ("Charlie", "AI Summit"),
+    # More attendees...
+]
+
+def attendaceTracker(attendeeList):
+    event_dict ={}
+    for attendee in attendeeList:
+        name, event = attendee
+        if event not in event_dict:
+            event_dict[event] = []
+        event_dict[event].append(name)
+
+    print(event_dict)
+        
+attendaceTracker(attendees)
+
 # 4. Mastering Tuple Packing and Unpacking in Python
 # Objective:
 # The goal of this assignment is to deepen your understanding of tuple packing and unpacking in Python. You will apply these techniques in various practical scenarios, enhancing your ability to work with flexible data structures and improve data handling efficiency.
