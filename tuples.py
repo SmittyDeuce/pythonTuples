@@ -71,7 +71,7 @@ def librarySystem(libraryList):
             print(f"Updated Library:\n{library}")
 
 
-librarySystem(library)
+# librarySystem(library)
 
 # 3. Python Loops and Tuples in Analytical Applications
 # Objective:
@@ -86,14 +86,35 @@ librarySystem(library)
 
 # Sample Data:
 
-# stock_data = [
-#     ("AAPL", "2021-01-01", 130.0),
-#     ("AAPL", "2021-01-02", 132.0),
-#     ("MSFT", "2021-01-01", 220.0),
-#     # More data...
-# ]
+stock_data = [
+    ("AAPL", "2021-01-01", 130.0),
+    ("AAPL", "2021-01-02", 132.0),
+    ("MSFT", "2021-01-01", 220.0),
+    # More data...
+]
 # Create a function to calculate the average closing price of a specific stock symbol over all dates.
 # Ensure your solution handles cases where the stock symbol does not exist in the data.
+
+def stockMarket(stockdata):
+    sumTotal = 0
+    count = 0
+    whatSymbol = input("what symbol averages do you want: 'AAPL' or 'MSFt' ")
+    whatSymbol = whatSymbol.upper()
+    try:
+        for data in stockdata:
+            if whatSymbol in data:
+                sumTotal += data[2]
+                count += 1
+                average = sumTotal / count
+        print(f"This is the average of 'AAPL' {average} over two days")
+    except UnboundLocalError:
+        print("symbol doesn't exist")
+    
+        
+
+
+stockMarket(stock_data)
+
 # Task 2: Event Attendance Tracker
 # Apply loops and tuples to track and report on event attendance.
 
