@@ -139,7 +139,7 @@ def attendaceTracker(attendeeList):
 
     print(event_dict)
         
-attendaceTracker(attendees)
+# attendaceTracker(attendees)
 
 # 4. Mastering Tuple Packing and Unpacking in Python
 # Objective:
@@ -160,6 +160,21 @@ attendaceTracker(attendees)
 # ]
 # Write a function to iterate over the list of orders.
 # Unpack each tuple in the list and format the details for display.
+
+orders = [
+    ("Alice", "Laptop", 1),
+    ("Bob", "Camera", 2),
+    # More orders...
+]
+
+def customOrder(cxOrder):
+    for order_data in orders:
+       name, product, quantity = order_data
+       print(f"{name} purchased {quantity} {product}(s)")
+
+
+customOrder(orders)
+
 # Task 2: Sorting and Filtering Contact Information
 # Implement tuple packing and unpacking in sorting and filtering tasks.
 
@@ -170,11 +185,23 @@ attendaceTracker(attendees)
 # Filter and display contacts whose names start with a specific letter.
 # Sample Contact Data:
 
-# contacts = [
-#     ("Alice", "alice@email.com", "123-456-7890"),
-#     ("Bob", "bob@email.com", "234-567-8901"),
-#     # More contacts...
-# ]
+contacts = [
+    ("Alice", "alice@email.com", "123-456-7890"),
+    ("Bob", "bob@email.com", "234-567-8901"),
+    # More contacts...
+]
+
+def contactInfo(contactList):
+    sortedContacts = sorted(contactList, key=lambda eleincontactList: eleincontactList[0])
+    filter_letter = input("Enter a letter to filter by: ").lower()
+
+    for contact in sortedContacts:
+        name, email, phone = contact
+        if name.lower().startswith(filter_letter):
+            print(name,email,phone)
+
+contactInfo(contacts)
+
 # 5. Advanced Tuple Techniques: Joining and Nesting in Python
 # Objective:
 # This assignment is designed to advance your understanding and application of joining and nesting tuples in Python. You will engage in tasks that require organizing and manipulating complex data structures, improving your problem-solving skills in handling multi-dimensional data.
@@ -189,5 +216,21 @@ attendaceTracker(attendees)
 # Display the combined catalog, ensuring that it maintains the order of products as they were in their original catalogs.
 # Example Catalogs:
 
-# catalog1 = (("Laptop", 1000), ("Camera", 500))
-# catalog2 = (("Smartphone", 800), ("Tablet", 450))
+catalog1 = (("Laptop", 1000), ("Camera", 500))
+catalog2 = (("Smartphone", 800), ("Tablet", 450))
+
+
+def catalogMerg(catalog1,catalog2):
+    allCatalog = []
+
+    for product in catalog1:
+        item, price = product
+        allCatalog.append((item,price))
+    for product in catalog2:
+        item, price = product
+        allCatalog.append((item,price))
+
+    return allCatalog
+
+
+print(catalogMerg(catalog1,catalog2))
